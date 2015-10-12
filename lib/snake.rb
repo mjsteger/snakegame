@@ -2,7 +2,6 @@ require 'curses'
 require 'forwardable'
 require_relative 'point'
 class Snake
-
   class PreviousVectorRecord
     attr_reader :vector, :remaining
     def initialize(vector, remaining)

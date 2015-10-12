@@ -4,6 +4,7 @@ GEM
     coderay (1.1.0)
     curses (1.0.1)
     method_source (0.8.2)
+    minitest (5.8.1)
     pry (0.10.2)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -11,6 +12,7 @@ GEM
     pry-doc (0.8.0)
       pry (~> 0.9)
       yard (~> 0.8)
+    rake (10.4.2)
     slop (3.6.0)
     yard (0.8.7.6)
 
@@ -19,8 +21,10 @@ PLATFORMS
 
 DEPENDENCIES
   curses
+  minitest
   pry
   pry-doc
+  rake
 
 BUNDLED WITH
    1.10.5
