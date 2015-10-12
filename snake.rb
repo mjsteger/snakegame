@@ -93,9 +93,9 @@ class Snake
 
   def process_direction(direction)
     return if direction.nil?
-    @current_direction = direction
+    @current_direction = direction if DIRECTION_HASH.keys.include?(direction)
     @vector = DIRECTION_HASH[direction] || @vector
-    # 5.times { add_body_part } if direction == 97
+    5.times { add_body_part } if direction == 'a'
     @previous_vector_changes[head] = PreviousVectorRecord.new(@vector, @body.length + 1)
   end
 
