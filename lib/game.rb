@@ -6,23 +6,25 @@ require 'curses'
 class IllegalStateError < StandardError; end
 
 class Game
+  attr :board, :snake
   def initialize
     @board = Board.new
-    @snake = Snake.new(@board.initialize_snake)
+    @snake = Snake.new(board.initialize_snake)
   end
+
   def play
-    food = @board.random_position
-    while true
+    food = board.random_position
+    Kernel.loop do
       change = Curses.getch
-      @snake.process_direction(change)
+      snake.process_direction(change)
       begin
-        food = @snake.tick(food)
-        raise unless @board.is_legal?(@snake.positions)
+        food = snake.tick(food)
+        raise unless board.is_legal?(snake.positions)
       rescue IllegalStateError
-        raise "You died!"
+        raise 'You died!'
       end
-      food ||= @board.random_position
-      @board.draw(snake: @snake, fruit: food)
+      food ||= board.random_position
+      board.draw(snake: snake, fruit: food)
       sleep 0.1
     end
   end
