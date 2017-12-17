@@ -46,7 +46,7 @@ class Board
       @win << 'o'
     end
     @win.setpos(*fruit.graphics_to_a)
-    @win << '🍎'
+    @win << '🍏'
     @win.refresh
   end
 
