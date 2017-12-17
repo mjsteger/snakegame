@@ -13,5 +13,5 @@ Gem::Specification.new do |gem|
   gem.name          = "snakegame"
   gem.add_runtime_dependency "curses"
   gem.require_paths = ["lib"]
-  gem.version       = "0.0.3"
+  gem.version       = "0.0.4"
 end

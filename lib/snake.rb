@@ -31,6 +31,7 @@ class Snake
       @vector = vector
     end
   end
+
   DIRECTION_HASH = {
     # We are in graphics land, so 0, 0 is the origin,
     # and the y axis goes down _positively_
@@ -64,7 +65,7 @@ class Snake
 
   def handle_food(food, next_head_position)
     if next_head_position.eql? food
-      5.times { add_body_part }
+      2.times { add_body_part }
       return nil
     end
     food
